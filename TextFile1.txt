@@ -1,0 +1,67 @@
+﻿Emne 3 – Jeg kan
+Her er målene for hver uke i emne 3, og oppgavene du kan øve med. Kryss av når du kan forklare eller gjøre det selv. 
+Det du ikke har krysset av, er det du skal øve på neste uke. Ta det med i loggen.
+
+Oppgavene ligger på inside.getacademy.no under Emne 3. Logg inn med GET-brukeren din. 
+Der er de delt i tre: Fra JS til C#, Grunnleggende OO og C# og Videregående OO.
+
+Uke 1 (16.–20.11): Fra JavaScript til C#
+Gjør på Inside: Emne 3 → Fra JS til C# → Oppgaver: hemmelig tall, snu tekst og én oppgave fra emne 1 i C#.
+
+Mer: PasswordGenerator (Fra JS til C# → Oppgaver), ordgåten (Fra JS til C# → Lese fra fil og skrive til fil).
+
+[x] Jeg kan opprette og kjøre en konsollapplikasjon i C#.
+[x] Jeg kan forklare forskjeller mellom JavaScript og C#, for eksempel sterk typing og var.
+[x] Jeg kan lage metoder med parametere og returverdi.
+[ ] Jeg kan bruke if, løkker, arrays, Random og enum i C#.
+Uke 2 (23.–27.11): Objekter og innkapsling
+Gjør på Inside: Emne 3 → Grunnleggende OO og C# → Intro til klasser: CharCounter. Grunnleggende OO og C# → Oppgaver: Match.
+
+Mer: tippekupongen og Tre på rad (Grunnleggende OO og C# → Oppgaver) og Player (Grunnleggende OO og C# → Flere oppgaver).
+
+[ ] Jeg kan lage en klasse med fields, konstruktør og instansmetoder.
+[ ] Jeg kan forklare forskjellen på klasse og instans, og på static og instansmedlemmer.
+[ ] Jeg kan lagre og hente objekter med JSON.
+[ ] Jeg kan bruke private, public og properties slik at objektet beskytter sine egne regler.
+[ ] Jeg kan forklare hvorfor innkapsling handler om å beskytte regler og skjule implementasjon, ikke bare om private fields.
+Uke 3 (30.11–4.12): Generics, value objects og Result
+Gjør på Inside: Emne 3 → Grunnleggende OO og C# → Flere oppgaver: Tilfeldige firkanter.
+
+[ ] Jeg kan forklare hvordan en klasse skjuler implementasjonen sin.
+[ ] Jeg kan bruke List<T> og forklare hovedideen bak generics.
+[ ] Jeg kan lage et value object som validerer i konstruktøren.
+[ ] Jeg kan forklare forskjellen på en uventet feil (exception) og en forventet feil.
+[ ] Jeg kan bruke en enkel Result<T> for forventede feil.
+Uke 4 (7.–11.12): API, async og SQL Server
+[ ] Jeg kan forklare klient, server, request og response.
+[ ] Jeg kan lage et ASP.NET Minimal API med GET og POST.
+[ ] Jeg kan koble en JavaScript-frontend til et API med fetch.
+[ ] Jeg kan bruke async og await i C# og forklare likheten med Promise i JavaScript.
+[ ] Jeg kan skrive SELECT, INSERT og UPDATE, og forklare hvordan API, SQL og objekter henger sammen.
+Uke 5 (14.–18.12): Domeneregler, HTTP-resultater og tester
+Gjør på Inside: Emne 3 → Grunnleggende OO og C# → Enhetstesting: WaterStateController.
+
+Mer på Inside: Emne 3 → Grunnleggende OO og C# → Hardkode scenarioer: bank-scenarioet.
+
+[ ] Jeg kan lage en enkel domenemodell som håndhever en regel, for eksempel at en time ikke kan dobbeltbookes.
+[ ] Jeg kan oversette et Result fra domenet til HTTP-resultater (Ok, BadRequest, Conflict).
+[ ] Jeg kan skille domenelogikk fra input/output i et eget klassebibliotek.
+[ ] Jeg kan skrive NUnit-tester for gyldige operasjoner og forventede avslag.
+Uke 6 (4.–8.1): Grunnpensum i eget API-prosjekt
+Øv med: ditt eget API til en frontend fra emne 2.
+
+Mer på Inside: Emne 3 → Grunnleggende OO og C# → Hardkode scenarioer.
+
+[ ] Jeg har valgt en frontend fra emne 2 og planlagt et API til den.
+[ ] Jeg kan bruke innkapsling og value objects i eget prosjekt.
+[ ] Jeg kan koble frontenden til mitt eget API med GET og POST.
+Uke 7 (11.–15.1): Persistens, regler og tester i eget prosjekt
+Øv med: ditt eget API.
+
+Mer på Inside: Emne 3 → Grunnleggende OO og C# → Flere oppgaver: flaskeoppgaven.
+Vil du videre, finner du fordypningen under Emne 3 → Videregående OO.
+
+[ ] Jeg kan lagre data fra eget API i SQL Server med async og await.
+[ ] Jeg kan returnere Result fra domenet og oversette det til HTTP-resultater.
+[ ] Jeg kan skille domenelogikken ut i et klassebibliotek og teste den med NUnit.
+[ ] Jeg kan presentere og forklare kodevalgene mine.
