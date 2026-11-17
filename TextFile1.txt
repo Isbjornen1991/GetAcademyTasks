@@ -21,7 +21,7 @@ Mer: tippekupongen og Tre på rad (Grunnleggende OO og C# → Oppgaver) og Playe
 
 [ ] Jeg kan lage en klasse med fields, konstruktør og instansmetoder.
 [ ] Jeg kan forklare forskjellen på klasse og instans, og på static og instansmedlemmer.
-[ ] Jeg kan lagre og hente objekter med JSON.
+[x Jeg kan lagre og hente objekter med JSON.
 [ ] Jeg kan bruke private, public og properties slik at objektet beskytter sine egne regler.
 [ ] Jeg kan forklare hvorfor innkapsling handler om å beskytte regler og skjule implementasjon, ikke bare om private fields.
 Uke 3 (30.11–4.12): Generics, value objects og Result

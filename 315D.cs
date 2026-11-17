@@ -15,7 +15,7 @@ namespace GetAcademyTasks
                 return "No input provided.";
             }
 
-            // 1. Split into words
+            // Split into words
             string[] words = input.Split(' ');
             int wordCount = words.Length;
 
@@ -46,7 +46,6 @@ namespace GetAcademyTasks
                     }
                 }
 
-                // Check if this word has the most vowels found so far
                 if (currentVowelCount > maxVowelCount)
                 {
                     maxVowelCount = currentVowelCount;
@@ -54,7 +53,7 @@ namespace GetAcademyTasks
                 }
             }
 
-            // 4. Return all the statistics neatly formatted
+            // Return all the statistics neatly formatted
             return $"Antall ord: {wordCount}\n" +
                    $"Lengste ord: {longestWord}\n" +
                    $"Flest vokaler: {wordWithMostVowels} ({maxVowelCount} stk)";

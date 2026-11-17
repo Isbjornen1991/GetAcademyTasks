@@ -14,7 +14,6 @@ namespace GetAcademyTasks
             }
 
             // Convert string to a character array, reverse it, and build a new string
-            // Figure out why must char be an array here
             char[] charArray = input.ToCharArray();
             Array.Reverse(charArray);
             return new string(charArray);

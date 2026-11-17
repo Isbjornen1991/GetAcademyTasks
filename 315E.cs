@@ -21,6 +21,14 @@ namespace GetAcademyTasks
 
             int[] intervalArray = new int[arraySize];
 
+            int currentValue = start;
+
+            for (int i = 0; i < intervalArray.Length; i++)
+            {
+                intervalArray[i] = currentValue;
+                currentValue += interval;
+            }
+
             return intervalArray;
         }
     }
