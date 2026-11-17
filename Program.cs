@@ -31,59 +31,59 @@
                     Console.WriteLine(result);
                 }
                 else if (action == "fit")
+                {
+                    int inputStart = 0;
+                    bool validStart = false;
+                    while (!validStart)
                     {
-                        int inputStart = 0;
-                        bool validStart = false;
-                        while (!validStart)
+                        Console.WriteLine("Enter a number to start from.");
+                        if (int.TryParse(Console.ReadLine(), out inputStart))
                         {
-                            Console.WriteLine("Enter a number to start from.");
-                            if (int.TryParse(Console.ReadLine(), out inputStart))
-                            {
-                                validStart = true;
-                            }
-                            else
-                            {
-                                Console.WriteLine("Invalid input. Please enter a whole number.");
-                            }
+                            validStart = true;
                         }
-
-                        int inputEnd = 0;
-                        bool validEnd = false;
-                        while (!validEnd)
+                        else
                         {
-                            Console.WriteLine("Enter a number to end at.");
-                            if (int.TryParse(Console.ReadLine(), out inputEnd))
-                            {
-                                validEnd = true;
-                            }
-                            else
-                            {
-                                Console.WriteLine("Invalid input. Please enter a whole number.");
-                            }
+                            Console.WriteLine("Invalid input. Please enter a whole number.");
                         }
-
-                        int inputInterval = 0;
-                        bool validInterval = false;
-                        while (!validInterval)
-                        {
-                            Console.WriteLine("Enter the number to increase by.");
-                            if (int.TryParse(Console.ReadLine(), out inputInterval))
-                            {
-                                validInterval = true;
-                            }
-                            else
-                            {
-                                Console.WriteLine("Invalid input. Please enter a whole number.");
-                            }
-                        }
-
-                        int[] generaedArray = _315E.GenerateNumberArray(inputStart, inputEnd, inputInterval);
-
-                        Console.WriteLine($"Generated numbers: {string.Join(", ", generaedArray)}");
                     }
+
+                    int inputEnd = 0;
+                    bool validEnd = false;
+                    while (!validEnd)
+                    {
+                        Console.WriteLine("Enter a number to end at.");
+                        if (int.TryParse(Console.ReadLine(), out inputEnd))
+                        {
+                            validEnd = true;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid input. Please enter a whole number.");
+                        }
+                    }
+
+                    int inputInterval = 0;
+                    bool validInterval = false;
+                    while (!validInterval)
+                    {
+                        Console.WriteLine("Enter the number to increase by.");
+                        if (int.TryParse(Console.ReadLine(), out inputInterval))
+                        {
+                            validInterval = true;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid input. Please enter a whole number.");
+                        }
+                    }
+
+                    int[] generaedArray = _315E.GenerateNumberArray(inputStart, inputEnd, inputInterval);
+
+                    Console.WriteLine($"Generated numbers: {string.Join(", ", generaedArray)}");
+                }
                 else if (action == "play")
                 {
-
+                    _315F.RunGame();
                 }
                 else
                 {

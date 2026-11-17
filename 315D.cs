@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Channels;
-
-namespace GetAcademyTasks
+﻿namespace GetAcademyTasks
 {
     public class _315D
     {
