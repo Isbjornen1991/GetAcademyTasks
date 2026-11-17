@@ -32,10 +32,10 @@
         public static void RunGame()
         {
             int[,] board = {
-        { 0, 1, 3 },
-        { 4, 2, 5 },
-        { 7, 8, 6 }
-    };
+                            { 0, 1, 3 },
+                            { 4, 2, 5 },
+                            { 7, 8, 6 }
+                           };
 
             bool playing = true;
 
