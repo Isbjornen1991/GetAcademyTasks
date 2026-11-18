@@ -4,7 +4,7 @@
     {
 
 
-        public static void drawBoard(int[,] board)
+        public static void DrawBoard(int[,] board)
         {
             Console.Clear();
             Console.WriteLine("--- SLIDING PUZZLE ---");
@@ -41,9 +41,9 @@
 
             while (playing)
             {
-                drawBoard(board);
+                DrawBoard(board);
                 Console.WriteLine("\nUse W (Up), S (Down), A (Left), D (Right) to move. Type 'q' to quit.");
-                string move = Console.ReadLine()?.Trim().ToLower();
+                string? move = Console.ReadLine()?.Trim().ToLower();
 
                 if (move == "q")
                 {
@@ -51,7 +51,6 @@
                     break;
                 }
 
-                // Step 1: Find the current row and col of the blank space (0)
                 int blankRow = -1;
                 int blankCol = -1;
 
@@ -67,32 +66,56 @@
                     }
                 }
 
-                // Step 2: Determine target coordinates based on input
                 int targetRow = blankRow;
                 int targetCol = blankCol;
 
-                if (move == "w") targetRow++;      // Moving 'W' means the tile below moves UP into the blank
-                else if (move == "s") targetRow--; // Moving 'S' means the tile above moves DOWN into the blank
-                else if (move == "a") targetCol++; // Moving 'A' means the tile to the right moves LEFT
-                else if (move == "d") targetCol--; // Moving 'D' means the tile to the left moves RIGHT
+                if (move == "w") targetRow--;
+                else if (move == "s") targetRow++;
+                else if (move == "a") targetCol--;
+                else if (move == "d") targetCol++;
 
-                // Step 3: Check if the target is within the 3x3 grid boundaries
                 if (targetRow >= 0 && targetRow < 3 && targetCol >= 0 && targetCol < 3)
                 {
-                    // Swap the numbers!
                     int temp = board[targetRow, targetCol];
                     board[targetRow, targetCol] = board[blankRow, blankCol];
                     board[blankRow, blankCol] = temp;
+
+                    if (CheckWin(board))
+                    {
+                        DrawBoard(board);
+                        Console.WriteLine("\n Congratulations! You solved the puzzle!");
+                        playing = false;
+                    }
                 }
                 else
                 {
                     Console.WriteLine("Invalid move! Hit a wall.");
-                    Console.ReadKey(); // Pause so they can read the warning
+                    Console.ReadKey();
                 }
             }
         }
 
+        private static bool CheckWin(int[,] currentBoard)
+        {
+            int[,] winningBoard = {
+        { 1, 2, 3 },
+        { 4, 5, 6 },
+        { 7, 8, 0 }
+    };
 
+            for (int r = 0; r < 3; r++)
+            {
+                for (int c = 0; c < 3; c++)
+                {
+                    if (currentBoard[r, c] != winningBoard[r, c])
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
     }
 
 
