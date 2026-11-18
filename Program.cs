@@ -8,7 +8,7 @@
 
             while (keepRunning)
             {
-                Console.WriteLine("\nWhat would you like to do? Type 'reverse', 'longest', 'fit', 'play' or 'exit'");
+                Console.WriteLine("\nWhat would you like to do? Type 'reverse', 'longest', 'fit', 'play', 'game' or 'exit'");
                 string action = Console.ReadLine();
 
                 if (action == "exit")
@@ -84,6 +84,10 @@
                 else if (action == "play")
                 {
                     _315F.RunGame();
+                }
+                else if (action == "game")
+                {
+                    RockScissPaper.RunGame();
                 }
                 else
                 {
