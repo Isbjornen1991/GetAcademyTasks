@@ -2,9 +2,6 @@
 {
     internal class RockScissPaper
     {
-
-
-
         public static void RunGame()
         {
             int playerWins = 0;

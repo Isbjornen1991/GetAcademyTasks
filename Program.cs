@@ -8,7 +8,7 @@
 
             while (keepRunning)
             {
-                Console.WriteLine("\nWhat would you like to do? Type 'reverse', 'longest', 'fit', 'play', 'game' or 'exit'");
+                Console.WriteLine("\nWhat would you like to do? Type 'reverse', 'longest', 'fit', 'play', 'game', 'count' or 'exit'");
                 string? action = Console.ReadLine();
 
                 if (action == "exit")
@@ -29,6 +29,11 @@
                     string? userInput = Console.ReadLine();
                     string result = _315D.CounterFunction(userInput ?? string.Empty);
                     Console.WriteLine(result);
+                }
+                else if (action == "count")
+                {
+                    Console.WriteLine("Enter a sentence or text to count letters in: ");
+                    _315G.GetAcademyFunction();
                 }
                 else if (action == "fit")
                 {
