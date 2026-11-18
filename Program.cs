@@ -9,7 +9,7 @@
             while (keepRunning)
             {
                 Console.WriteLine("\nWhat would you like to do? Type 'reverse', 'longest', 'fit', 'play', 'game' or 'exit'");
-                string action = Console.ReadLine();
+                string? action = Console.ReadLine();
 
                 if (action == "exit")
                 {
@@ -19,15 +19,15 @@
                 else if (action == "reverse")
                 {
                     Console.WriteLine("Enter some text to reverse: ");
-                    string userInput = Console.ReadLine();
-                    string reversedText = TextHelper.ReverseString(userInput);
+                    string? userInput = Console.ReadLine();
+                    string reversedText = TextHelper.ReverseString(userInput ?? string.Empty);
                     Console.WriteLine($"Reversed: {reversedText}");
                 }
                 else if (action == "longest")
                 {
                     Console.WriteLine("Enter a sentence or text to analyze: ");
-                    string userInput = Console.ReadLine();
-                    string result = _315D.CounterFunction(userInput);
+                    string? userInput = Console.ReadLine();
+                    string result = _315D.CounterFunction(userInput ?? string.Empty);
                     Console.WriteLine(result);
                 }
                 else if (action == "fit")
