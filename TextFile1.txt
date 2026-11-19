@@ -16,7 +16,7 @@ Mer: PasswordGenerator (Fra JS til C# → Oppgaver), ordgåten (Fra JS til C# �
 [x] Jeg kan opprette og kjøre en konsollapplikasjon i C#.
 [x] Jeg kan forklare forskjeller mellom JavaScript og C#, for eksempel sterk typing og var.
 [x] Jeg kan lage metoder med parametere og returverdi.
-[z] Jeg kan bruke if, løkker, arrays, Random og enum i C#.
+[x] Jeg kan bruke if, løkker, arrays, Random og enum i C#.
 
 Uke 2 (23.–27.11): Objekter og innkapsling
 Gjør på Inside: Emne 3 → Grunnleggende OO og C# → Intro til klasser: CharCounter. Grunnleggende OO og C# → Oppgaver: Match.
@@ -73,4 +73,4 @@ Vil du videre, finner du fordypningen under Emne 3 → Videregående OO.
 [ ] Jeg kan lagre data fra eget API i SQL Server med async og await.
 [ ] Jeg kan returnere Result fra domenet og oversette det til HTTP-resultater.
 [ ] Jeg kan skille domenelogikken ut i et klassebibliotek og teste den med NUnit.
-[ ] Jeg kan presentere og forklare kodevalgene mine.
+[x] Jeg kan presentere og forklare kodevalgene mine.
