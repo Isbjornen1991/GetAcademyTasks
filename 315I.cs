@@ -6,10 +6,11 @@
         public static string PasswordGenerator(string pwLength, string pwContents)
         {
             // Variables
+            Random random = new Random();
             // Output
             string output = "";
 
-            string onFail = "PasswordGenerator\r\nOptions:\r\n-l = liten bokstav\r\n- L = stor bokstav\r\n- d = siffer\r\n- s = spesialtegn(!\"#¤%&/(){}[]\r\nEksempel: PasswordGenerator 14 lLssdd\r\n    betyr\r\n        Min. 1 liten bokstav\r\n        Min. 1 1 stor bokstav\r\n        Min. 2 spesialtegn\r\n        Min. 2 sifre\r\n        Lengde på passordet skal være 14";
+            string onFail = "Invalid input. Please check the options above and try again.";
 
             //Password Contents
             char[] lowerCaseChars =
@@ -41,7 +42,6 @@
                 string pattern = pwContents;
 
                 pattern = fixMissingLength(passwordLength, contentsTooShort, pattern);
-                Random random = new Random();
 
                 output = BuildPasswordFromPattern(
                     pattern,
@@ -52,8 +52,7 @@
                     specialChars);
             }
 
-
-
+            output = ShufflePassword(output, random);
 
             return output;
         }
@@ -162,6 +161,22 @@
             }
 
             return true;
+        }
+
+        private static string ShufflePassword(string password, Random random)
+        {
+            char[] characters = password.ToCharArray();
+
+            for (int i = characters.Length - 1; i > 0; i--)
+            {
+                int swapIndex = random.Next(0, i + 1);
+
+                char temp = characters[i];
+                characters[i] = characters[swapIndex];
+                characters[swapIndex] = temp;
+            }
+
+            return new string(characters);
         }
     }
 }
