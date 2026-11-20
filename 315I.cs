@@ -43,32 +43,56 @@
                 pattern = fixMissingLength(passwordLength, contentsTooShort, pattern);
                 Random random = new Random();
 
-                foreach (char c in pattern)
+                output = BuildPasswordFromPattern(
+                    pattern,
+                    random,
+                    lowerCaseChars,
+                    upperCaseChars,
+                    digits,
+                    specialChars);
+            }
+
+
+
+
+            return output;
+        }
+
+        private static string BuildPasswordFromPattern(
+            string pattern,
+            Random random,
+            char[] lowerCaseChars,
+            char[] upperCaseChars,
+            char[] digits,
+            char[] specialChars)
+        {
+            string generated = "";
+
+            foreach (char c in pattern)
+            {
+                if (c == 'l')
                 {
-                    if (c == 'l')
-                    {
-                        int index = random.Next(0, lowerCaseChars.Length);
-                        output += lowerCaseChars[index];
-                    }
-                    else if (c == 'L')
-                    {
-                        int index = random.Next(0, upperCaseChars.Length);
-                        output += lowerCaseChars[index];
-                    }
-                    else if (c == 'd')
-                    {
-                        int index = random.Next(0, digits.Length);
-                        output += digits[index];
-                    }
-                    else if (c == 's')
-                    {
-                        int index = random.Next(0, specialChars.Length);
-                        output += specialChars[index];
-                    }
+                    int index = random.Next(0, lowerCaseChars.Length);
+                    generated += lowerCaseChars[index];
+                }
+                else if (c == 'L')
+                {
+                    int index = random.Next(0, upperCaseChars.Length);
+                    generated += upperCaseChars[index];
+                }
+                else if (c == 'd')
+                {
+                    int index = random.Next(0, digits.Length);
+                    generated += digits[index];
+                }
+                else if (c == 's')
+                {
+                    int index = random.Next(0, specialChars.Length);
+                    generated += specialChars[index];
                 }
             }
 
-            return output;
+            return generated;
         }
 
         private static string fixMissingLength(int passwordLength, bool contentsTooShort, string pattern)
@@ -96,8 +120,6 @@
                 return false;
             }
 
-            bool hasValidLength;
-            bool hasValidContents;
 
             // First Param Checks
             foreach (char c in pwLength)
@@ -108,16 +130,17 @@
                 }
             }
 
-            if (int.TryParse(pwLength, out passwordLength))
-            {
-                hasValidLength = true;
-            }
-            else
+            if (!int.TryParse(pwLength, out passwordLength))
             {
                 return false;
             }
 
             if (passwordLength <= 0)
+            {
+                return false;
+            }
+
+            if (passwordLength < pwContents.Length)
             {
                 return false;
             }
