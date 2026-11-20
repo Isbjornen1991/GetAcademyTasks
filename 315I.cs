@@ -41,7 +41,7 @@
             {
                 string pattern = pwContents;
 
-                pattern = fixMissingLength(passwordLength, contentsTooShort, pattern);
+                pattern = FixMissingLength(passwordLength, contentsTooShort, pattern);
 
                 output = BuildPasswordFromPattern(
                     pattern,
@@ -94,7 +94,7 @@
             return generated;
         }
 
-        private static string fixMissingLength(int passwordLength, bool contentsTooShort, string pattern)
+        private static string FixMissingLength(int passwordLength, bool contentsTooShort, string pattern)
         {
             if (contentsTooShort == true)
             {
