@@ -8,7 +8,7 @@
 
             while (keepRunning)
             {
-                Console.WriteLine("\nWhat would you like to do? Type 'reverse', 'longest', 'fit', 'play', 'game', 'count' or 'exit'");
+                Console.WriteLine("\nWhat would you like to do? Type 'reverse', 'longest', 'fit', 'play', 'game', 'count', 'password' or 'exit'");
                 string? action = Console.ReadLine();
 
                 if (action == "exit")
@@ -35,6 +35,24 @@
                     Console.WriteLine("Enter a sentence or text to count letters in: ");
                     _315G.GetAcademyFunction();
                 }
+                else if (action == "password")
+                {
+                    string passwordLength;
+                    string passwordContents;
+
+
+                    Console.WriteLine("Let's generate a random password!");
+                    Console.WriteLine("How long would your password to be?");
+                    passwordLength = Console.ReadLine();
+                    Console.WriteLine("Please enter what your password should contain");
+                    Console.WriteLine("PasswordGenerator  \r\nOptions:\r\n- l = liten bokstav\r\n- L = stor bokstav\r\n- d = siffer\r\n- s = spesialtegn (!\"#¤%&/(){}[]\r\nEksempel: PasswordGenerator 14 lLssdd\r\n    betyr\r\n        Min. 1 liten bokstav\r\n        Min. 1 1 stor bokstav\r\n        Min. 2 spesialtegn\r\n        Min. 2 sifre\r\n        Lengde på passordet skal være 14");
+                    passwordContents = Console.ReadLine();
+
+                    string passwordResult = _315I.PasswordGenerator(passwordLength ?? string.Empty, passwordContents ?? string.Empty);
+                    Console.WriteLine(passwordResult);
+
+                }
+
                 else if (action == "fit")
                 {
                     int inputStart = 0;
@@ -82,9 +100,9 @@
                         }
                     }
 
-                    int[] generaedArray = _315E.GenerateNumberArray(inputStart, inputEnd, inputInterval);
+                    int[] generatedArray = _315E.GenerateNumberArray(inputStart, inputEnd, inputInterval);
 
-                    Console.WriteLine($"Generated numbers: {string.Join(", ", generaedArray)}");
+                    Console.WriteLine($"Generated numbers: {string.Join(", ", generatedArray)}");
                 }
                 else if (action == "play")
                 {

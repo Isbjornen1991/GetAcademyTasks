@@ -6,7 +6,6 @@
         public static string PasswordGenerator(string pwLength, string pwContents)
         {
             // Variables
-
             // Output
             string output = "";
 
@@ -19,39 +18,93 @@
                                         'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
                                     ];
 
-            char[] upperCaseChars = new char[lowerCaseChars.Length];
-
+            // Digits Array
             char[] digits = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
+            // Lowercase Array
             char[] specialChars = ['(', '!', '"', '#', '¤', '%', '&', '/', '(', ')', '{', '}', '[', ']', ']', ';'];
 
+            // Uppercase Array
+            char[] upperCaseChars = new char[lowerCaseChars.Length];
             for (int i = 0; i < lowerCaseChars.Length; i++)
             {
                 upperCaseChars[i] = char.ToUpper(lowerCaseChars[i]);
             }
 
-
-
             // Checks
+            if (!IsValid(pwLength, pwContents, out int passwordLength, out bool contentsTooShort))
+            {
+                return onFail;
+            }
+            else
+            {
+                string pattern = pwContents;
+
+                pattern = fixMissingLength(passwordLength, contentsTooShort, pattern);
+                Random random = new Random();
+
+                foreach (char c in pattern)
+                {
+                    if (c == 'l')
+                    {
+                        int index = random.Next(0, lowerCaseChars.Length);
+                        output += lowerCaseChars[index];
+                    }
+                    else if (c == 'L')
+                    {
+                        int index = random.Next(0, upperCaseChars.Length);
+                        output += lowerCaseChars[index];
+                    }
+                    else if (c == 'd')
+                    {
+                        int index = random.Next(0, digits.Length);
+                        output += digits[index];
+                    }
+                    else if (c == 's')
+                    {
+                        int index = random.Next(0, specialChars.Length);
+                        output += specialChars[index];
+                    }
+                }
+            }
+
+            return output;
+        }
+
+        private static string fixMissingLength(int passwordLength, bool contentsTooShort, string pattern)
+        {
+            if (contentsTooShort == true)
+            {
+                int missingCount = passwordLength - pattern.Length;
+
+                for (int i = 0; i < missingCount; i++)
+                {
+                    pattern += 'l';
+                }
+            }
+
+            return pattern;
+        }
+
+        private static bool IsValid(string pwLength, string pwContents, out int passwordLength, out bool contentsTooShort)
+        {
+            passwordLength = 0;
+            contentsTooShort = false;
 
             if (pwLength.Length == 0)
             {
-                return onFail;
+                return false;
             }
 
             bool hasValidLength;
             bool hasValidContents;
-            bool contentsTooShort = false;
-
-            int passwordLength;
-
 
             // First Param Checks
             foreach (char c in pwLength)
             {
                 if (!char.IsDigit(c))
                 {
-                    return onFail;
+                    return false;
                 }
             }
 
@@ -61,14 +114,13 @@
             }
             else
             {
-                return onFail;
+                return false;
             }
 
             if (passwordLength <= 0)
             {
-                return onFail;
+                return false;
             }
-
 
             // Second Param Checks
             if (pwContents.Length < passwordLength)
@@ -82,12 +134,11 @@
             {
                 if (Array.IndexOf(validPwContents, c) == -1)
                 {
-                    return onFail;
+                    return false;
                 }
             }
 
+            return true;
         }
     }
 }
-
-
