@@ -70,10 +70,20 @@
             }
 
 
-
+            // Second Param Checks
             if (pwContents.Length < passwordLength)
             {
                 contentsTooShort = true;
+            }
+
+            char[] validPwContents = ['l', 'L', 'd', 's'];
+
+            foreach (char c in pwContents)
+            {
+                if (Array.IndexOf(validPwContents, c) == -1)
+                {
+                    return onFail;
+                }
             }
 
         }
